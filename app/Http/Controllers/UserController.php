@@ -53,6 +53,11 @@ class UserController extends Controller
         $user->designation_id_fk = $designation_id_fk;
         $user->save();
 
+        // If the designation exists, sync it with the user
+        if ($designation) {
+            $user->designations()->sync([$designation->id]);
+        }
+
         return response()->json($user, 201);
     }
 
@@ -81,6 +86,11 @@ class UserController extends Controller
         $user->address = $request->input('address');
         $user->designation_id_fk = $designation_id_fk;
         $user->save();
+
+        // If the designation exists, sync it with the user
+        if ($designation) {
+            $user->designations()->sync([$designation->id]);
+        }
 
         return response()->json($user,201);
     }
