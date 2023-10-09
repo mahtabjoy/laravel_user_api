@@ -14,4 +14,7 @@ class Users extends Model
     {
         return $this->belongsTo(Designation::class, 'designation_id_fk');
     }
+  public function designations() {
+        return $this->belongsToMany(Designation::class);
+    }
 }
