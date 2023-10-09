@@ -14,4 +14,8 @@ class Designation extends Model
     public function users() {
         return $this->hasMany(Users::class, 'designation_id_fk');
     }
+
+    public function user() {
+        return $this->belongsToMany(User::class);
+    }
 }
