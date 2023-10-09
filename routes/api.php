@@ -19,7 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Route::resource('users', UserController::class)->only(['index','store','show','update','destroy']);
 Route::get('all_users',[UserController::class, 'index']);
 Route::get('user/{id}',[UserController::class, 'show']);
 Route::post('store_user',[UserController::class, 'store']);
