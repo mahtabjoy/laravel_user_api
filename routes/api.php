@@ -24,3 +24,4 @@ Route::get('user/{id}',[UserController::class, 'show']);
 Route::post('store_user',[UserController::class, 'store']);
 Route::put('update_user/{id}',[UserController::class, 'update']);
 Route::delete('delete_user/{id}',[UserController::class, 'destroy']);
+Route::get('/upazillas/{upazillaId}', [UpazilaController::class ,'getUpazillaInformation']);
